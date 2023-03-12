@@ -13,6 +13,15 @@
           {% if site.tagline %}
             <h5 class="site-tagline">{{ site.tagline }}</h5>
           {% endif %}
+          {% if site.data.social %}
+            <div class="site-tagline">
+              {% for social in site.data.social %}
+                <a href="{{ social.url }}" target="_blank">
+                  <i class="{{ social.icon | default: 'fas fa-link' }}" title="{{ social.title }}"></i>
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
         {% if site.data.navigation %}
           <nav class="nav">
